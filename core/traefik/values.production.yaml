@@ -3,3 +3,5 @@ traefik:
     kubernetesIngress:
       publishedService:
         enabled: true
+  deployment:
+    replicas: 3
