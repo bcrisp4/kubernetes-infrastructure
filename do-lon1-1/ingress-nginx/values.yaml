@@ -17,8 +17,8 @@ ingress-nginx:
       enabled: true
       type: LoadBalancer
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: "lb.bc4.uk"
-        service.beta.kubernetes.io/do-loadbalancer-hostname: "lb.bc4.uk"
+        external-dns.alpha.kubernetes.io/hostname: "do-lon1-1.bc4.uk"
+        service.beta.kubernetes.io/do-loadbalancer-hostname: "do-lon1-1.bc4.uk"
         service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
     # Use IngressClass resource
     ingressClassResource:
