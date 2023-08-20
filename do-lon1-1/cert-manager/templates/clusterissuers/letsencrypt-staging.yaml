@@ -13,6 +13,13 @@ spec:
       name: letsencrypt-staging
     # Enable the HTTP-01 challenge provider
     solvers:
-      - http01:
-          ingress:
-            ingressClassName: nginx
+      - selector:
+          dnsNames:
+            - bc4.uk
+        dns01:
+          route53:
+            region: eu-west-2
+            accessKeyID: AKIAX6IW6HTOAN4J25OB
+            secretAccessKeySecretRef:
+              name: cert-manager-aws-route53-bc4-uk
+              key: secret-access-key
