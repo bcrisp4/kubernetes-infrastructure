@@ -17,6 +17,7 @@ ingress-nginx:
       enabled: true
       type: LoadBalancer
       annotations:
+        service.beta.kubernetes.io/do-loadbalancer-hostname: "lb.bc4.uk"
         service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
     # Use IngressClass resource
     ingressClassResource:
