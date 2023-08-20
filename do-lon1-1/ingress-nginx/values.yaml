@@ -1,0 +1,30 @@
+ingress-nginx:
+  controller:
+    replicaCount: 3
+    minAvailable: 2
+    kind: Deployment
+    updateStrategy:
+      rollingUpdate:
+        maxUnavailable: 1
+        type: RollingUpdate
+    resources:
+      requests:
+        cpu: 100m
+        memory: 90Mi
+    service:
+      enabled: true
+      type: LoadBalancer
+    # Use IngressClass resource
+    ingressClassResource:
+      name: nginx
+      enabled: true
+      default: true
+    # Enable backwards compatibility with old the ingressClass annotation
+    ingressClass: nginx
+    podSecurityContext:
+      runAsNonRoot: true
+      runAsUser: 101 # nginx uid
+      runAsGroup: 101 # nginx gid
+      fsGroup: 101 # nginx gid
+      seccompProfile:
+        type: RuntimeDefault
