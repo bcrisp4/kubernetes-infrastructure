@@ -2,4 +2,4 @@ cert-manager:
   installCRDs: true
   global:
     leaderElection:
-      namespace: infrastructure
+      namespace: infra-core
