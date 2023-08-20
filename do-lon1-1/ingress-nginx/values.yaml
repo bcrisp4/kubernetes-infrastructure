@@ -2,6 +2,7 @@ ingress-nginx:
   controller:
     config:
       use-forwarded-headers: "true"
+      use-proxy-protocol: "true"
     replicaCount: 3
     minAvailable: 2
     kind: Deployment
