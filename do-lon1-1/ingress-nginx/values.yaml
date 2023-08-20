@@ -1,7 +1,7 @@
 ingress-nginx:
   controller:
     config:
-      use-forwarded-headers: "true"
+      use-proxy-protocol: "true"
     replicaCount: 3
     minAvailable: 2
     kind: Deployment
@@ -16,6 +16,8 @@ ingress-nginx:
     service:
       enabled: true
       type: LoadBalancer
+      annotations:
+        service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
     # Use IngressClass resource
     ingressClassResource:
       name: nginx
