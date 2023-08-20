@@ -6,7 +6,7 @@ ingress-nginx:
     updateStrategy:
       rollingUpdate:
         maxUnavailable: 1
-        type: RollingUpdate
+      type: RollingUpdate
     resources:
       requests:
         cpu: 100m
