@@ -23,6 +23,11 @@ mimir-distributed:
       ruler_storage:
         storage_prefix: mimirruler
 
+  runtimeConfig:
+    overrides:
+      ben:
+        ruler_max_rules_per_rule_group: 50
+
   alertmanager:
     enabled: false
     replicas: 1
