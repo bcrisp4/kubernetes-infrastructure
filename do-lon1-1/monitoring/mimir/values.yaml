@@ -85,6 +85,9 @@ mimir-distributed:
   minio:
     enabled: false
 
+  nginx:
+    enabled: false
+
   overrides_exporter:
     enabled: true
     replicas: 1
