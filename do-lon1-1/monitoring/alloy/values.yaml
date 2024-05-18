@@ -1,5 +1,12 @@
 alloy:
   alloy:
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 1000Mi
+      limits:
+        memory: 2000Mi
+    stabilityLevel: "generally-available"
     configMap:
       content: |
         prometheus.operator.servicemonitors "default" {
@@ -33,10 +40,7 @@ alloy:
           tenant_id = "ben"
         }
 
-    stabilityLevel: "generally-available"
-
   controller:
     type: statefulset
-
   serviceMonitor:
     enabled: true
