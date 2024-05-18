@@ -16,14 +16,11 @@ mimir-distributed:
             access_key_id: "${S3_ACCESS_KEY}"
             secret_access_key: "${S3_SECRET_KEY}"
       blocks_storage:
-        s3:
-          storage_prefix: mimir-blocks
+        storage_prefix: mimir-blocks
       alertmanager_storage:
-        s3:
-          storage_prefix: mimir-alertmanager
+        storage_prefix: mimir-alertmanager
       ruler_storage:
-        s3:
-          storage_prefix: mimir-ruler
+        storage_prefix: mimir-ruler
 
   alertmanager:
     enabled: false
