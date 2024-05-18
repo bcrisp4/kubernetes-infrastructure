@@ -1,0 +1,11 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: grafana-admin
+spec:
+  encryptedData:
+    foo: AgCk/EC5QogrtiyU/f+NlQLiT0AIVsp8F5qamjf9ozl8st+EvGA7XhhxLZ/QuM8RLfTY5jnv1TTdjXNJEoxPvrq+hdaVo27rVZfuq9a9atMjSB7Vv4uQnVga0pbUvseT8hti58h0N4OMJpJVqQIKn7xhFC/SLQzuxHJkQYlt8wqp08AFTrEf4k442zFOxTvKy3nkOcQAUb4uIBrRhRCSVk76U8cSr3jKz+ha0GK2Cj29Xf+DV7ht7WVa1nWyH3yLStKg+DwO3yVwew5+raoC+GZQVkuIE2MKlj08CE3DmasUXqaDBDQJGTkQkl8LCCz/0yEnfTxG3O+zi6XbzD3JbVGcujEedYusbsnCMG27wmMyIbYhrM09Lcwwe1RQnpYrSLUPeF8sbh5qVFvBofZW77QfswniTRAK7gD2xXk03GbRMRzAxeS+C/iJ8QbJ4fxSd9zOb9jHVWN5w/bIHCNkRvqjg5Pc3zJO6AUeEdsGWuJyOdlz4/vZpFG4FU6HIUKyQv8G0xpsuWnNtai5sSneY6Caxpu1t5kYiVJVdoBb13zxQ58vNRu6+2rwlxalGtOkW91po/jSd1T0OXIDFDmPX38XAOiU38xN0bp+7Tf64vxiKzhWqzQgpIAFefoqeNRmgPgDCW1HKgjI7KyoYB1XLgfjacZzj42itsy7oHTB/Tz0kLWN5vqD9PW4DzVfwAoJfPGdNTSkBHMNEGNkG1DjphTtUm5k+q6IvplPxPcg/bxCI4cd1fagbysmbsHEyfJRvBINfWAnV4m8hPnZ6lrUxvqJ/5c=
+  template:
+    metadata:
+      name: grafana-admin
