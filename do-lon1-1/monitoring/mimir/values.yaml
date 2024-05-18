@@ -1,5 +1,4 @@
 mimir-distributed:
-  fullnameOverride: mimir
 
   global:
     extraEnvFrom:
