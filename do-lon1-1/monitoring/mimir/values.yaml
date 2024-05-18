@@ -157,7 +157,15 @@ mimir-distributed:
   metaMonitoring:
     dashboards:
       enabled: true
+      annotations:
+        k8s-sidecar-target-directory: /tmp/dashboards/Mimir Dashboards
       labels:
         grafana_dashboard: "1"
     serviceMonitor:
       enabled: true
+    prometheusRule:
+      enabled: true
+      mimirAlerts: true
+      mimirRules: true
+    grafanaAgent:
+      enabled: false
