@@ -16,6 +16,7 @@ spec:
       - selector:
           dnsNames:
             - bc4.uk
+            - '*.bc4.uk'
         dns01:
           route53:
             region: eu-west-2
