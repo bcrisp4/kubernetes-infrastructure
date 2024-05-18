@@ -14,6 +14,7 @@ grafana:
     enabled: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-production
+      external-dns.alpha.kubernetes.io/ttl: 60
     hosts:
     - grafana.bc4.uk
     tls:
