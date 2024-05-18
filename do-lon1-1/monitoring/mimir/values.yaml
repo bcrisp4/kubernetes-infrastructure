@@ -1,0 +1,157 @@
+mimir-distributed:
+  fullnameOverride: mimir
+
+  global:
+    extraEnvFrom:
+    - secretRef:
+      name: monitoring-s3
+
+  mimir:
+    structuredConfig:
+      common:
+        storage:
+          backend: s3
+          s3:
+            endpoint: bc4-monitoringdata-1.ams3.digitaloceanspaces.com
+            access_key: "${S3_ACCESS_KEY}"
+            secret_key: "${S3_SECRET_KEY}"
+      blocks_storage:
+        s3:
+          storage_prefix: mimir-blocks
+      alertmanager_storage:
+        s3:
+          storage_prefix: mimir-alertmanager
+      ruler_storage:
+        s3:
+          storage_prefix: mimir-ruler
+
+  alertmanager:
+    enabled: false
+    replicas: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 100Mi
+    persistentVolume:
+      enabled: true
+      size: 1Gi
+
+  compactor:
+    replicas: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 200Mi
+    persistentVolume:
+      enabled: true
+      size: 1Gi
+
+  distributor:
+    replicas: 1
+    resources:
+      requests:
+        memory: 300Mi
+        cpu: 100m
+      limits:
+        memory: 500Mi
+
+  gateway:
+    enabled: true
+    enabledNonEnterprise: true
+    replicas: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 200Mi
+
+  ingester:
+    replicas: 3
+    resources:
+      requests:
+        memory: 500Mi
+        cpu: 100m
+      limits:
+        memory: 1000Mi
+    persistentVolume:
+      enabled: true
+      size: 2Gi
+
+  minio:
+    enabled: false
+
+  overrides_exporter:
+    enabled: true
+    replicas: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 100Mi
+
+  querier:
+    replicas: 1
+    resources:
+      requests:
+        memory: 300Mi
+        cpu: 1000m
+      limits:
+        memory: 500Mi
+
+  query_frontend:
+    replicas: 1
+    resources:
+      requests:
+        memory: 200Mi
+        cpu: 100m
+      limits:
+        memory: 300Mi
+
+  query_scheduler:
+    enabled: true
+    replicas: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 100Mi
+
+  ruler:
+    enabled: true
+    replicas: 1
+    resources:
+      requests:
+        memory: 200Mi
+        cpu: 100m
+      limits:
+        memory: 300Mi
+
+  store_gateway:
+    replicas: 1
+    resources:
+      requests:
+        memory: 200Mi
+        cpu: 100m
+      limits:
+        memory: 300Mi
+    persistentVolume:
+      enabled: true
+      size: 1Gi
+
+  rollout_operator:
+    enabled: true
+
+  metaMonitoring:
+    dashboards:
+      enabled: true
+      labels:
+        grafana_dashboard: "1"
+    serviceMonitor:
+      enabled: true
