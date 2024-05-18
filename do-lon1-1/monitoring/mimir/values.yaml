@@ -154,4 +154,4 @@ mimir-distributed:
       labels:
         grafana_dashboard: "1"
     serviceMonitor:
-      enabled: true
+      enabled: false
