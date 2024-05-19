@@ -1,12 +1,12 @@
 grafana:
   replicas: 1
   resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
     requests:
       cpu: 100m
       memory: 128Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
   persistence:
     enabled: true
     size: 1Gi
@@ -27,12 +27,12 @@ grafana:
     passwordKey: admin-password
   sidecar:
     resources:
-      limits:
-        cpu: 100m
-        memory: 100Mi
       requests:
         cpu: 50m
         memory: 50Mi
+      limits:
+        cpu: 100m
+        memory: 100Mi
     dashboards:
       enabled: true
       searchNamespace: ALL
