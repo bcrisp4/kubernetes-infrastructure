@@ -2,7 +2,7 @@ loki-distributed:
   fullnameOverride: loki
 
   loki:
-    storage_config:
+    storageConfig:
       object_prefix: loki
       tsdb_shipper:
         active_index_directory: /loki/index
