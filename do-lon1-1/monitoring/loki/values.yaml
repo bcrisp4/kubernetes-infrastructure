@@ -3,13 +3,21 @@ loki-distributed:
 
   loki:
     storageConfig:
-      object_prefix: loki
       tsdb_shipper:
         active_index_directory: /loki/index
         cache_location: /loki/index_cache
       aws:
         endpoint: ams3.digitaloceanspaces.com
-        bucketnames: bc4-monitoringdata-1
+        bucketnames: bc4-loki-1
+    schemaConfig:
+      configs:
+      - from: 2024-05-19
+        object_store: s3
+        store: tsdb
+        schema: v13
+        index:
+          prefix: index_
+          period: 24h
 
   compactor:
     extraEnvFrom:
