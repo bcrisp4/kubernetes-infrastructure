@@ -10,16 +10,10 @@ mimir-distributed:
         storage:
           backend: s3
           s3:
-            bucket_name: bc4-monitoringdata-1
+            bucket_name: bc4-mimir-1
             endpoint: ams3.digitaloceanspaces.com
             access_key_id: "${S3_ACCESS_KEY}"
             secret_access_key: "${S3_SECRET_KEY}"
-      blocks_storage:
-        storage_prefix: mimirblocks
-      alertmanager_storage:
-        storage_prefix: mimiralertmanager
-      ruler_storage:
-        storage_prefix: mimirruler
 
   runtimeConfig:
     overrides:
