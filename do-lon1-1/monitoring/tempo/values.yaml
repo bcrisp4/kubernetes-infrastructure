@@ -9,8 +9,8 @@ tempo-distributed:
       s3:
         bucket_name: bc4-monitoringdata-1
         endpoint: ams3.digitaloceanspaces.com
-        access_key_id: "${S3_ACCESS_KEY}"
-        secret_access_key: "${S3_SECRET_KEY}"
+        access_key: "${S3_ACCESS_KEY}"
+        secret_key: "${S3_SECRET_KEY}"
         prefix: tempo
   minio:
     enabled: false
