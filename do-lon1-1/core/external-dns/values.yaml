@@ -4,22 +4,22 @@ external-dns:
   registry: txt
   txtOwnerId: external-dns
   domainFilters:
-    - bc4.uk
+  - bc4.uk
   sources:
-    - service
-    - ingress
+  - service
+  - ingress
   extraArgs:
-    - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
+  - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
   env:
-    - name: AWS_DEFAULT_REGION
-      value: eu-west-2
-    - name: AWS_SHARED_CREDENTIALS_FILE
-      value: /.aws/credentials
+  - name: AWS_DEFAULT_REGION
+    value: eu-west-2
+  - name: AWS_SHARED_CREDENTIALS_FILE
+    value: /.aws/credentials
   extraVolumes:
-    - name: aws-credentials
-      secret:
-        secretName: external-dns-aws-route53-bc4-uk
+  - name: aws-credentials
+    secret:
+      secretName: route53
   extraVolumeMounts:
-    - name: aws-credentials
-      mountPath: /.aws
-      readOnly: true
+  - name: aws-credentials
+    mountPath: /.aws
+    readOnly: true
