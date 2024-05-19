@@ -4,7 +4,7 @@ mimir-distributed:
   global:
     extraEnvFrom:
     - secretRef:
-        name: monitoring-s3
+        name: s3
 
   mimir:
     structuredConfig:
