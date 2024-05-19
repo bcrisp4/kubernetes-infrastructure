@@ -1,15 +1,15 @@
 loki-distributed:
   fullnameOverride: loki
+
   loki:
-    storage:
-      bucketNames:
-        chunks: bc4-monitoringdata-1
-        ruler: bc4-monitoringdata-1
-        admin: bc4-monitoringdata-1
+    storage_config:
       object_prefix: loki
-      type: s3
-      s3:
+      tsdb_shipper:
+        active_index_directory: /loki/index
+        cache_location: /loki/index_cache
+      aws:
         endpoint: ams3.digitaloceanspaces.com
+        bucketnames: bc4-monitoringdata-1
 
   compactor:
     extraEnvFrom:
