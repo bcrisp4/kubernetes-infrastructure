@@ -1,0 +1,11 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: route53
+spec:
+  encryptedData:
+    secret-access-key: AgCYffbpT3E6Bycag4hUIxZdbJFtFNwXo7IkaVR0BkOIEH1qgBIOfA+IxDUiz18ocjYG7Vi1jlGn1gl3DjlzUuNuDXbY41k+SyPqLEdaPJ+VuBcILZPl+DZeHXKcXCfrj7TZla+CHZXbVPPPZotkOOpOPZCee5uN8nNGo15LgWpgx5hkmAoI3DnLG42UTpBBzHvlO8zN5Yr940FKwrtUMP6eGgBcU5TZfdKPd4TjVUrm2HRGoSuJtSepQcu9GIWGzcV8m9bwkrz2vFwu/QsBlZp7ssHo/KOSIXgvYFhqdC+qcwZ3IEe0k53EyEEjpVidhiTAtpBJMfSB3ikaEBZcN4HDayn8PEhzbRl/cznP4YL574qct5Jv00xO6a1srfO6+tXj7Xl3GnV+NBjtHDN9a1qHQ0yFZ5LPnv+WuJ8Ze3y4edBC9UxT4MmZFT1V+lf/I/bYjWnKuJQxJZu//Cq+U8gyHVDLjGBWB9mvYEHrfxFU20Mn4Bcwfh7m+o091azmjn9Y9YYOwdV5uIJeTui0/kBGI1v6IGBADuHuRoNHpAxcrTTzBr1r+hF+KsSa8g0vzxcbBj5zyNtVti4olXM27H6w9G4zckjwrk09I/WcxohCHGe4QMihrcwOB2ROc+vC8Ka6XYdU7ly9jPUhUxy27+LGEk/rzgMKFr97w2VscBo9bW2oVIiV4pu3iiF+QSyVKaIKmQ9YyCFfDvmlI+WWREqQeoqTcpfDvKTouUqie+b6OlxDnGrXpIrw
+  template:
+    metadata:
+      name: route53

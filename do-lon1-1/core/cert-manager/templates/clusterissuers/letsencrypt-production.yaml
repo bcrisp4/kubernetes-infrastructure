@@ -4,14 +4,10 @@ metadata:
   name: letsencrypt-production
 spec:
   acme:
-    # The ACME server URL
     server: https://acme-v02.api.letsencrypt.org/directory
-    # Email address used for ACME registration
     email: webmaster@bc4.uk
-    # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
-      name: letsencrypt-production
-    # Enable the HTTP-01 challenge provider
+      name: acme-letsencrypt-production
     solvers:
       - selector: {}
         dns01:
@@ -19,5 +15,5 @@ spec:
             region: eu-west-2
             accessKeyID: AKIAX6IW6HTOAN4J25OB
             secretAccessKeySecretRef:
-              name: cert-manager-aws-route53-bc4-uk
+              name: route53
               key: secret-access-key
