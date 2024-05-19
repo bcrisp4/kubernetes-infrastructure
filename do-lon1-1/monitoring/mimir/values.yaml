@@ -14,6 +14,12 @@ mimir-distributed:
             endpoint: ams3.digitaloceanspaces.com
             access_key_id: "${S3_ACCESS_KEY}"
             secret_access_key: "${S3_SECRET_KEY}"
+      blocks_storage:
+        storage_prefix: blocks
+      alertmanager_storage:
+        storage_prefix: alertmanager
+      ruler_storage:
+        storage_prefix: ruler
 
   runtimeConfig:
     overrides:
