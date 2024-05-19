@@ -1,0 +1,34 @@
+loki-distributed:
+  loki:
+    storage:
+      bucketNames:
+        chunks: bc4-monitoringdata-1
+        ruler: bc4-monitoringdata-1
+        admin: bc4-monitoringdata-1
+      object_prefix: loki
+      type: s3
+      s3:
+        endpoint: ams3.digitaloceanspaces.com
+
+  compactor:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  distributor:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  gateway:
+    enabled: true
+  ingester:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  querier:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  queryFrontend:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
