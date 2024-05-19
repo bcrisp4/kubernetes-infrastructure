@@ -24,6 +24,7 @@ mimir-distributed:
   runtimeConfig:
     overrides:
       ben:
+        max_global_series_per_user: 250000
         ruler_max_rules_per_rule_group: 50
 
   alertmanager:
