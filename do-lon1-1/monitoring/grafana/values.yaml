@@ -22,7 +22,7 @@ grafana:
       hosts:
       - grafana.bc4.uk
   admin:
-    existingSecret: grafana-admin
+    existingSecret: admin
     userKey: admin-user
     passwordKey: admin-password
   sidecar:
