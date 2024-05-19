@@ -3,9 +3,8 @@ tempo-distributed:
     trace:
       backend: s3
       s3:
-        bucket: bc4-monitoringdata-1
+        bucket: bc4-tempo-1
         endpoint: ams3.digitaloceanspaces.com
-        prefix: tempo
 
   compactor:
     extraEnvFrom:
