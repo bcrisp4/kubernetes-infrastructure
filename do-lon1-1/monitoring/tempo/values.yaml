@@ -1,8 +1,4 @@
 tempo-distributed:
-  global:
-    extraEnvFrom:
-    - secretRef:
-        name: s3
   storage:
     trace:
       backend: s3
@@ -12,6 +8,28 @@ tempo-distributed:
         access_key: "${S3_ACCESS_KEY}"
         secret_key: "${S3_SECRET_KEY}"
         prefix: tempo
+
+  compactor:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  distributor:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  ingester:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  querier:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+  queryFrontend:
+    extraEnvFrom:
+    - secretRef:
+        name: s3
+
   minio:
     enabled: false
   traces:
