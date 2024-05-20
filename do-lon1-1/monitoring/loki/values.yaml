@@ -18,6 +18,8 @@ loki-distributed:
         index:
           prefix: index_
           period: 24h
+    sructuredConfig:
+      auth_enabled: true
 
   compactor:
     extraEnvFrom:
