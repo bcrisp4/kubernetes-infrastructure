@@ -98,6 +98,12 @@ alloy:
         }
 
         otelcol.connector.spanmetrics "default" {
+          dimension {
+            name = "http.status_code"
+          }
+          dimension {
+            name = "http.method"
+          }
           histogram {
             exponential {}
           }
