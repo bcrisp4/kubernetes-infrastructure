@@ -54,7 +54,7 @@ alloy:
           output {
             metrics = [otelcol.processor.k8sattributes.default.input]
             logs    = [otelcol.processor.k8sattributes.default.input]
-            traces  = [otelcol.processor.k8sattributes.default.input,otelcol.connector.servicegraph.default.input]
+            traces  = [otelcol.processor.k8sattributes.default.input,otelcol.connector.servicegraph.default.input,otelcol.connector.spanmetrics.default.input]
           }
         }
 
@@ -73,6 +73,18 @@ alloy:
         }
 
         otelcol.connector.servicegraph "default" {
+          output {
+            metrics = [otelcol.processor.batch.default.input]
+          }
+        }
+
+        otelcol.connector.spanmetrics "default" {
+          dimension {
+            name = "http.status_code"
+          }
+          dimension {
+            name = "http.method"
+          }
           output {
             metrics = [otelcol.processor.batch.default.input]
           }
