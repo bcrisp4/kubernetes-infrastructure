@@ -54,7 +54,7 @@ alloy:
           output {
             metrics = [otelcol.processor.k8sattributes.default.input]
             logs    = [otelcol.processor.k8sattributes.default.input]
-            traces  = [otelcol.processor.k8sattributes.default.input,otelcol.connector.servicegraph.default.input,otelcol.processor.transform.default.input]
+            traces  = [otelcol.processor.k8sattributes.default.input,otelcol.processor.transform.default.input]
           }
         }
 
@@ -69,13 +69,6 @@ alloy:
             metrics = [otelcol.processor.batch.default.input]
             logs    = [otelcol.processor.batch.default.input]
             traces  = [otelcol.processor.batch.default.input]
-          }
-        }
-
-        otelcol.connector.servicegraph "default" {
-          dimensions = ["http.method"]
-          output {
-            metrics = [otelcol.processor.batch.default.input]
           }
         }
 
@@ -100,7 +93,7 @@ alloy:
             ]
           }
           output {
-            traces  = [otelcol.connector.spanmetrics.default.input]
+            traces  = [otelcol.connector.spanmetrics.default.input,otelcol.connector.servicegraph.default.input]
           }
         }
 
@@ -111,6 +104,13 @@ alloy:
           exemplars {
             enabled = true
           }
+          output {
+            metrics = [otelcol.processor.batch.default.input]
+          }
+        }
+
+        otelcol.connector.servicegraph "default" {
+          dimensions = ["http.method"]
           output {
             metrics = [otelcol.processor.batch.default.input]
           }
