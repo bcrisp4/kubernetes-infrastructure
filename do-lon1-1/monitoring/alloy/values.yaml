@@ -107,9 +107,9 @@ alloy:
         otelcol.connector.spanmetrics "default" {
           histogram {
             exponential {}
-            exemplars {
-              enabled = true
-            }
+          }
+          exemplars {
+            enabled = true
           }
           output {
             metrics = [otelcol.processor.batch.default.input]
