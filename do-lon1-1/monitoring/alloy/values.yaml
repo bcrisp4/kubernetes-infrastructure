@@ -105,6 +105,7 @@ alloy:
             name = "http.method"
           }
           histogram {
+            explicit {}
             exponential {}
           }
           exemplars {
