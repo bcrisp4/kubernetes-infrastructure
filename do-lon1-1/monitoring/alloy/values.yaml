@@ -79,11 +79,11 @@ alloy:
         }
 
         otelcol.connector.spanmetrics "default" {
-          dimension {
-            name = "http.status_code"
-          }
-          dimension {
-            name = "http.method"
+          histogram {
+            exponential {}
+            exemplars {
+              enabled = true
+            }
           }
           output {
             metrics = [otelcol.processor.batch.default.input]
