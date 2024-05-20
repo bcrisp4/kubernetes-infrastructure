@@ -50,7 +50,7 @@ mimir-distributed:
         memory: 200Mi
     persistentVolume:
       enabled: true
-      size: 1Gi
+      size: 5Gi
 
   distributor:
     replicas: 1
@@ -82,7 +82,7 @@ mimir-distributed:
         memory: 1000Mi
     persistentVolume:
       enabled: true
-      size: 2Gi
+      size: 10Gi
 
   minio:
     enabled: false
@@ -148,7 +148,7 @@ mimir-distributed:
         memory: 300Mi
     persistentVolume:
       enabled: true
-      size: 1Gi
+      size: 2Gi
 
   rollout_operator:
     enabled: true
