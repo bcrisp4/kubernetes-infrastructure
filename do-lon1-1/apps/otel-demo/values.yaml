@@ -11,3 +11,5 @@ opentelemetry-demo:
     enabled: false
   prometheus:
     enabled: false
+  opensearch:
+    enabled: false
