@@ -59,6 +59,12 @@ alloy:
         }
 
         otelcol.processor.k8sattributes "default" {
+          pod_association {
+            source {
+              from = "resource_attribute"
+              name = "k8s.pod.ip"
+            }
+          }
           output {
             metrics = [otelcol.processor.batch.default.input]
             logs    = [otelcol.processor.batch.default.input]
