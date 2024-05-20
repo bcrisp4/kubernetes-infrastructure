@@ -73,6 +73,7 @@ alloy:
         }
 
         otelcol.connector.servicegraph "default" {
+          dimensions = ["http.method"]
           output {
             metrics = [otelcol.processor.batch.default.input]
           }
