@@ -6,8 +6,7 @@ tempo-distributed:
         bucket: bc4-tempo-1
         endpoint: ams3.digitaloceanspaces.com
 
-  multitenancyEnabled:
-    enabled: true
+  multitenancyEnabled: true
 
   compactor:
     extraEnvFrom:
