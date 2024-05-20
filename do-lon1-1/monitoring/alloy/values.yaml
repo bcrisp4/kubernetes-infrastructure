@@ -106,7 +106,6 @@ alloy:
           }
           histogram {
             explicit {}
-            exponential {}
           }
           exemplars {
             enabled = true
