@@ -18,7 +18,7 @@ loki-distributed:
         index:
           prefix: index_
           period: 24h
-    sructuredConfig:
+    structuredConfig:
       auth_enabled: true
 
   compactor:
