@@ -98,6 +98,7 @@ alloy:
         }
 
         otelcol.connector.spanmetrics "default" {
+          metrics_flush_interval = "15s"
           dimension {
             name = "http.status_code"
           }
