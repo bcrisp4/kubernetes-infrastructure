@@ -117,6 +117,7 @@ alloy:
         }
 
         otelcol.connector.servicegraph "default" {
+          metrics_flush_interval = "15s"
           dimensions = ["http.method"]
           output {
             metrics = [otelcol.processor.batch.default.input]
