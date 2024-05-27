@@ -103,7 +103,7 @@ mimir-distributed:
         memory: 100Mi
 
   querier:
-    replicas: 1
+    replicas: 2
     resources:
       requests:
         memory: 500Mi
