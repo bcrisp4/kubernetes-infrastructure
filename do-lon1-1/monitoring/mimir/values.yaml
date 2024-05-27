@@ -144,10 +144,10 @@ mimir-distributed:
     replicas: 1
     resources:
       requests:
-        memory: 200Mi
+        memory: 500Mi
         cpu: 100m
       limits:
-        memory: 300Mi
+        memory: 1000Mi
     persistentVolume:
       enabled: true
       size: 2Gi
