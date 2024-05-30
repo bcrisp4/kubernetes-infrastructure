@@ -1,9 +1,0 @@
-apiVersion: v2
-name: goldilocks
-type: application
-version: 0.1.0
-
-dependencies:
-- name: goldilocks
-  repository: https://charts.fairwinds.com/stable
-  version: 8.*

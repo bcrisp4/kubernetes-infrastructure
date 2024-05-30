@@ -1,7 +1,0 @@
-goldilocks:
-  vpa:
-    enabled: true
-    updater:
-      enabled: true
-  dashboard:
-    replicaCount: 1
